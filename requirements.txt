@@ -1,3 +1,5 @@
 numpy
-scikit-fuzzy
 scipy
+scikit-fuzzy
+packaging
+networkx
