@@ -71,17 +71,18 @@ def generate_synthetic_data(seed=42):
     baseline = rng.normal(0, 1, size=(500, 3))
     window_normal = rng.normal(0, 1, size=(100, 3))
 
-    mean_shift = np.array([2.0, -1.5, 0.5])
+    mean_shift = np.array([4.0, -4.0, 3.0])
     cov_anom = np.array(
         [
-            [2.0, 1.5, 0.2],
-            [1.5, 3.0, 0.4],
-            [0.2, 0.4, 1.5],
+            [4.0, 3.0, 2.0],
+            [3.0, 5.0, 2.5],
+            [2.0, 2.5, 3.5],
         ]
     )
     window_anom = rng.multivariate_normal(mean_shift, cov_anom, size=100)
 
     return baseline, window_normal, window_anom
+
 
 
 def compute_indicators_for_window(window, baseline):
